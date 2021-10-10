@@ -33,7 +33,7 @@ public class TrunkOneScreen extends ScreenAdapter {
         Gdx.gl.glClearColor(0.5f, 0.5f, 0.5f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         game.batch.begin();
-        game.font.draw(game.batch, "Please select the option listing difference of arrys vs linked list!",
+        game.font.draw(game.batch, "Please select the option listing difference of arrays vs linked list!",
                 Gdx.graphics.getWidth() * .45f,
                 Gdx.graphics.getHeight() * .75f);
         game.font.draw(game.batch, "A: Arrays use sequential access, linked list use random access.",

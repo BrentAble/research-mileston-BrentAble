@@ -1,17 +1,17 @@
-com/research/game/TrunkOneScreen.java
- com.research.game.TrunkOneScreen
- com.research.game.TrunkOneScreen$1
+com/research/game/Research.java
+ com.research.game.Research
 com/research/game/MainScreen.java
  com.research.game.MainScreen
  com.research.game.MainScreen$1
-com/research/game/TrunkTwoScreen.java
- com.research.game.TrunkTwoScreen
- com.research.game.TrunkTwoScreen$1
-com/research/game/Research.java
- com.research.game.Research
 com/research/game/StartScreen.java
  com.research.game.StartScreen
  com.research.game.StartScreen$1
+com/research/game/TrunkOneScreen.java
+ com.research.game.TrunkOneScreen
+ com.research.game.TrunkOneScreen$1
+com/research/game/TrunkTwoScreen.java
+ com.research.game.TrunkTwoScreen
+ com.research.game.TrunkTwoScreen$1
 com/research/game/EndScreen.java
  com.research.game.EndScreen
  com.research.game.EndScreen$1

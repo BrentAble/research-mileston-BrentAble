@@ -79,8 +79,7 @@ public class MainScreen extends ScreenAdapter {
                 }
                 else if (Vector2.dst(circleX, circleY, x, renderY) < trunk_1_area) {
                     game.setScreen(new TrunkOneScreen(game));
-                } else {
-                    // (Vector2.dst(circleX, circleY, x, renderY) < trunk_2_area)
+                } else if (Vector2.dst(circleX, circleY, x, renderY) < trunk_2_area) {
                     game.setScreen(new TrunkTwoScreen(game));
                 }
                 return true;

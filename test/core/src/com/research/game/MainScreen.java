@@ -11,10 +11,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.physics.box2d.Body;
-import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.EdgeShape;
 import com.badlogic.gdx.physics.box2d.World;
 //use this for our random number to place trunks
 import com.badlogic.gdx.math.MathUtils;
@@ -64,14 +61,6 @@ public class MainScreen extends ScreenAdapter {
         debugRenderer = new Box2DDebugRenderer();
         camera = new OrthographicCamera(50, 25);
 
-        // Following are all
-        // dimensions of our ground
-        createEdge(BodyDef.BodyType.StaticBody, -20, -10f, 20, -10f, 0);
-        // dimensions for left wall
-        createEdge(BodyDef.BodyType.StaticBody, -20, -10f, -20, 10, 0);
-        // dimensions for right wall
-        createEdge(BodyDef.BodyType.StaticBody, 20, -10, 20, 10f, 0);
-
     }
 
     @Override
@@ -117,14 +106,11 @@ public class MainScreen extends ScreenAdapter {
         }
 
         // Assign standard movement to wasd keys
-
         if(Gdx.input.isKeyPressed(Input.Keys.W)){ circleY++; } // move up
         else if(Gdx.input.isKeyPressed(Input.Keys.S)){ circleY--; } // move down
         if(Gdx.input.isKeyPressed(Input.Keys.A)){ circleX--; } // move left
         else if(Gdx.input.isKeyPressed(Input.Keys.D)){ circleX++; } // move right
 
-        // Going to try and match the color of our background here
-        // Will end up going darker, as lower rgba values get closer to black
         // the image used in assets was set to our desktop launchers size,
         // and should expand with it if you manually extend the window,
         // However if it doesnt, the color's here should match close enough
@@ -149,27 +135,8 @@ public class MainScreen extends ScreenAdapter {
         game.shapeRenderer.end();
 
     }
-
     @Override
         public void hide() {
         Gdx.input.setInputProcessor(null);
-    }
-
-    // This right here is where we are implementing our previous create edges
-    // So our borders, or any boxes we just put down on the screen
-    // should have proper physics, so no going through them
-    private Body createEdge(BodyDef.BodyType type, float x1, float y1,
-                            float x2, float y2, float density) {
-        EdgeShape poly = new EdgeShape();
-        poly.set(new Vector2(0, 0), new Vector2(x2 - x1, y2 - y1));
-
-        BodyDef def = new BodyDef();
-        def.type = type;
-        Body body = world.createBody(def);
-        body.createFixture(poly, density);
-        body.setTransform(x1, y1, 0);
-        poly.dispose();
-
-        return body;
     }
 }

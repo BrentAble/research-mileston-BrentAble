@@ -43,10 +43,16 @@ public void render(float delta) {
     // the width and height refers to starting position of our text
     game.font.draw(game.batch, "This is our Start Screen",
             Gdx.graphics.getWidth() * 0.45f, // set how far width goes on screen
-            Gdx.graphics.getHeight() / 2); // set height for our text
-    game.font.draw(game.batch, "Approach events & answer them! Press space to start",
+            Gdx.graphics.getHeight() * .75f); // set height for our text
+    game.font.draw(game.batch, "Approach events & click on them them to answer questions!",
+            Gdx.graphics.getWidth() * 0.4f,
+            Gdx.graphics.getHeight() / 2);
+    game.font.draw(game.batch, "Click on the circle when finished to go to the end!",
             Gdx.graphics.getWidth() * 0.4f,
             Gdx.graphics.getHeight() / 4);
+    game.font.draw(game.batch, "Click Space to begin!",
+            Gdx.graphics.getWidth() * 0.45f,
+            Gdx.graphics.getHeight() / 5);
     game.batch.end();
 }
 

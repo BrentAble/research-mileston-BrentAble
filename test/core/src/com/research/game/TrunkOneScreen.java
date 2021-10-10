@@ -6,6 +6,8 @@ import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 
+// This file along with Trunk two screen are essentially the same, just having different
+// string output and input
 public class TrunkOneScreen extends ScreenAdapter {
     Research game;
 
@@ -30,7 +32,6 @@ public class TrunkOneScreen extends ScreenAdapter {
     public void render(float delta) {
         Gdx.gl.glClearColor(0.5f, 0.5f, 0.5f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        // This following is essentially the same as Start Screen, but at the end
         game.batch.begin();
         game.font.draw(game.batch, "Please select the option listing difference of arrys vs linked list!",
                 Gdx.graphics.getWidth() * .45f,

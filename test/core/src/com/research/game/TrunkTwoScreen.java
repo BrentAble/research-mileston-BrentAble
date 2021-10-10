@@ -30,7 +30,6 @@ public class TrunkTwoScreen extends ScreenAdapter {
     public void render(float delta) {
         Gdx.gl.glClearColor(0.4f, 0.6f, 0.2f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        // This is essentially the same as our other trunk screen
         game.batch.begin();
         game.font.draw(game.batch, "What order do Queues work in?",
                 Gdx.graphics.getWidth() * .45f,
